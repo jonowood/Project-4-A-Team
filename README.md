@@ -16,6 +16,28 @@ Our dataset contains 1000 news articles, 500 labeled as real news and 500 labele
 ## Model Building
 We have built a machine learning model using Scikit-learn to classify news articles as real or fake. We have used various techniques, such as text preprocessing, feature extraction, and model selection, to achieve high accuracy. The model is trained on 70% of the dataset and tested on the remaining 30%. We have achieved an accuracy of 95% on the test set.
 
+## Technical Requirements for Project 4
+
+### Data Model Implementation (20 points)
+- A Python script initialises, trains, and evaluates a model (5 points)
+- The data is cleaned, normalised, and standardised prior to modelling (5 points)
+- The model utilises data retrieved from SQL or Spark (5 points)
+- The model demonstrates meaningful predictive power at least 75% classification accuracy or 0.80 R-squared. (5 points)
+
+### Data Model Optimisation (20 points)
+- The model optimisation and evaluation process showing iterative changes made to the model and the resulting changes in model performance is documented in either a CSV/Excel table or in the Python script itself (10 points)
+- Overall model performance is printed or displayed at the end of the script (10 points)
+
+### GitHub Documentation (20 points)
+- GitHub repository is free of unnecessary files and folders and has an appropriate .gitignore in use (10 points)
+- The README is customised as a polished presentation of the content of the project (10 points)
+
+### Group Presentation (20 points)
+- All group members speak during the presentation. (5 points)
+- Content, transitions, and conclusions flow smoothly within any time restrictions. (5 points)
+- The content is relevant to the project. (5 points)
+- The presentation maintains audience interest. (5 points)
+
 ## Project Structure
 - `data/` directory contains the dataset in CSV format
 - `notebooks/` directory contains Jupyter notebooks used for data analysis, preprocessing, and model building
