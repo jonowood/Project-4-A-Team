@@ -1,5 +1,8 @@
-# Fake News Identification using Machine Learning
+<p align="center">
+<img src="Static/Images/fake-news-headline.jpg" alt="" title="" width="600" height="300">
+</p>
 
+# Fake News Identification using Machine Learning
 This is our group's project for Project 4, where we were tasked to solve, analyze, or visualize a problem using machine learning (ML) with the other technologies we've learned. We chose to tackle the problem of identifying fake news using ML. 
 
 ## Project Overview
