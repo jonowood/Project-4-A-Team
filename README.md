@@ -1,5 +1,5 @@
 <p align="center">
-<img src="Static/Images/fake-news-headline.jpg" alt="" title="" width="600" height="300">
+<img src="Static/Images/fake-new-facts.jpeg" alt="" title="" width="600" height="600">
 </p>
 
 # Fake News Identification using Machine Learning
