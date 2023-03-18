@@ -26,7 +26,7 @@ def predict(text):
     review = [ps.stem(word) for word in review if not word in stopwords.words('english')]
     review = ' '.join(review)
     review_vect = check.transform([review]).toarray()
-    prediction = 'FAKE' if model.predict(review_vect) == 0 else 'REAL'
+    prediction = 'FAKE' if model.predict_proba(review_vect)[0][0] > 0.5 else 'REAL'
     return prediction
 
 @app.route('/', methods=['POST'])

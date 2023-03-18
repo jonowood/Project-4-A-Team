@@ -139,7 +139,7 @@
     </form>
     {% if result %}
     <div class='fake-news-card'>
-      {% if result == "fake" %}
+      {% if result == "FAKE" %}
         <img src="../static/images/fake.png" alt="Fake news">
       {% elif result == "REAL" %}
         <img src="../static/images/true.png" alt="True news">
@@ -157,6 +157,7 @@
         {% set text = '' %}
         // location.reload();
       }, 5000);
+      console.log("Result:", "{{ result }}");
     </script>
     {% endif %}
 
