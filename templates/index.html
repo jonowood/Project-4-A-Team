@@ -148,6 +148,19 @@
           <h2>TRUE</h2>
         {% endif %}
       </div>
+      <script>
+        // Clear the result after 5 seconds
+        setTimeout(function() {
+          $('.fake-news-card').remove();
+        }, 5000);
+        
+        // Reset the form and associated variable after 5 seconds
+        setTimeout(function() {
+          $('#jTextarea').val('');
+          {% set text = '' %}
+          // location.reload();
+        }, 5000);
+      </script>
     {% endif %}
     <script>
       function growTextarea (i,elem) {
