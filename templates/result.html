@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Fake News Prediction</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+              integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+              crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+      }
+      .result-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+      }
+      .card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -20%);
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        width: 500px;
+        text-align: center;
+      }
+      .card h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      .card input[type="text"] {
+        padding: 10px;
+        width: 80%;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+      .card button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .creators-card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        bottom: auto;
+        transform: translate(-50%, -115%);
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        width: 500px;
+        text-align: center;
+      }
+      .creators-card h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      .creators-card img {
+        position: relative;
+        width: 50%;
+        height: 170px;
+        border-radius: 10%;
+        margin-bottom: 20px;
+        display: inline-block;
+      }
+      .fake-news-card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 300%);
+        background-color: white;
+        text-emphasis-color: rgb(0, 0, 0);
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        width: 500px;
+        max-width: 600px;
+        text-align: center;
+        margin: 20px;
+      }
+      .fake-news-card h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .fake-news-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+      .result-true {
+        display: none;
+      }
+      .result-fake {
+        display: none;
+      }
+      .result-image {
+        margin-top: 20px;
+      }
+      .result-image img {
+        display: block;
+        margin: auto;
+        max-width: 300px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card creators-card">
+      <h1>J & J</h1>
+      <img src="/static/images/johan.jpg" alt="Creator 1">
+      <img src="/static/images/jono.jpg" alt="Creator 2">
+    </div>
+    <form action="/" method="POST">
+      <div class="card">
+        <h1>Fake News Detection</h1>
+        <div class="form-group">
+          <textarea class="form-control jTextarea" id="jTextarea" type="text" placeholder="Enter news article URL or text" name="text" required>{{text}}</textarea>
+          <br><br>
+          <button class="btn btn-primary btn-outline btn-md" type="submit" name="predict">Predict</button>
+        </div>
+      </div>
+    </form>
+    {% if result %}
+      <div class='fake-news-card'>
+        {% if result == "fake" %}
+          <img src="../static/images/fake.png" alt="Fake news">
+          <h2>FAKE</h2>
+        {% elif result == "true" %}
+          <img src="../static/images/true.png" alt="True news">
+          <h2>TRUE</h2>
+        {% endif %}
+      </div>
+    {% endif %}
+    <script>
+      function growTextarea (i,elem) {
+        var elem = $(elem);
+        var resizeTextarea = function( elem ) {
+          var scrollLeft = window.pageXOffset || (document.documentElement || document.body.parentNode || document.body).scrollLeft;
+          var scrollTop  = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+          elem.css('height', 'auto').css('height', elem.prop('scrollHeight') );
+          window.scrollTo(scrollLeft, scrollTop);
+        };
+        elem.on('input', function() {
+          resizeTextarea( $(this) );
+        });
+      }
+      $('.jTextarea').each(growTextarea);
+    </script>
+  </body>
+</html>
