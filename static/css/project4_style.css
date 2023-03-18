@@ -1,0 +1,123 @@
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+.result-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  width: 500px;
+  text-align: center;
+}
+
+.card h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.card input[type="text"] {
+  padding: 10px;
+  width: 80%;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.card button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.creators-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  bottom: auto;
+  transform: translate(-50%, -115%);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  width: 500px;
+  text-align: center;
+}
+
+.creators-card h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.creators-card img {
+  position: relative;
+  width: 50%;
+  height: 170px;
+  border-radius: 10%;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.fake-news-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  bottom: auto;
+  transform: translate(-50%, -20%);
+  text-emphasis-color: rgb(0, 0, 0);
+  /* padding: 30px; */
+  width: 500px;
+  max-width: 500px;
+  text-align: center;
+  /* margin: 20px; */
+}
+
+.fake-news-card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.fake-news-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.result-true {
+  display: none;
+}
+
+.result-fake {
+  display: none;
+}
+
+.result-image {
+  margin-top: 20px;
+}
+
+.result-image img {
+  display: block;
+  margin: auto;
+  max-width: 300px;
+  height: auto;
+}

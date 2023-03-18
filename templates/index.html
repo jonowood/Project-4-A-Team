@@ -1,132 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Fake News Prediction</title>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-              integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-              crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <style>
-      body {
-        background-color: #f2f2f2;
-        font-family: Arial, sans-serif;
-      }
-      .result-image {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 999;
-      }
-      .card {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -20%);
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        padding: 30px;
-        width: 500px;
-        text-align: center;
-      }
-      .card h1 {
-        font-size: 36px;
-        margin-bottom: 20px;
-      }
-      .card input[type="text"] {
-        padding: 10px;
-        width: 80%;
-        border-radius: 5px;
-        border: none;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        margin-bottom: 20px;
-        font-size: 18px;
-      }
-      .card button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        font-size: 18px;
-        cursor: pointer;
-      }
-      .creators-card {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        bottom: auto;
-        transform: translate(-50%, -115%);
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        padding: 30px;
-        width: 500px;
-        text-align: center;
-      }
-      .creators-card h1 {
-        font-size: 36px;
-        margin-bottom: 20px;
-      }
-      .creators-card img {
-        position: relative;
-        width: 50%;
-        height: 170px;
-        border-radius: 10%;
-        margin-bottom: 20px;
-        display: inline-block;
-      }
-      .fake-news-card {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        bottom: auto;
-        transform: translate(-50%, -20%);
-        text-emphasis-color: rgb(0, 0, 0);
-        /* padding: 30px; */
-        width: 500px;
-        max-width: 500px;
-        text-align: center;
-        /* margin: 20px; */
-      }
-      .fake-news-card h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
-      }
-      .fake-news-card img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        margin-top: 20px;
-      }
-      .result-true {
-        display: none;
-      }
-      .result-fake {
-        display: none;
-      }
-      .result-image {
-        margin-top: 20px;
-      }
-      .result-image img {
-        display: block;
-        margin: auto;
-        max-width: 300px;
-        height: auto;
-      }
-    </style>
+    <!-- Set the character encoding to UTF-8 -->
+    <meta charset="utf-8">
+    <!-- Set the compatibility mode for Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Set the title of the page -->
+    <title>Fake News Prediction</title>
+    <!-- Import the Bootstrap CSS file -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Import the custom CSS file for the project -->
+    <link href="/static/css/project4_style.css" rel="stylesheet" type="text/css">
+    <!-- Import the Bootstrap JavaScript file -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <!-- Import the jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   </head>
   <body>
+    <!-- The card containing information about the creators of the website -->
     <div class="card creators-card">
       <h1>J & J</h1>
       <img src="/static/images/johan.jpg" alt="Creator 1">
       <img src="/static/images/jono.jpg" alt="Creator 2">
     </div>
+    <script>
+      // Add a new section to display the last text entry and result
+      var lastResultSection = $('<div>').addClass('last-result-section');
+      $('body').append(lastResultSection);
+  
+      // Update the last result section with the last text entry and result
+      var lastResult = $('<p>').text('Last Text Entry: ' + '{{ text }}' + ', Result: ' + '{{ result }}');
+      lastResultSection.append(lastResult);
+    </script>
+    <!-- The form for entering the news article text -->
     <form action="/" method="POST">
       <div class="card">
         <h1>Fake News Detection</h1>
@@ -137,18 +46,39 @@
         </div>
       </div>
     </form>
-    {% if result %}
+  {% if result %}
+  
+    <!-- The section for displaying the result -->
     <div class='fake-news-card'>
       {% if result == "FAKE" %}
         <img src="../static/images/fake.png" alt="Fake news">
+        <h1>Chance of Truth is {{ proba }}%</h1>
+        <div class="container d-flex justify-container-center">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- The chart showing the prediction probability -->
+              <div id="chart_div" style="width: 400px; height: 120px;"></div>
+            </div>
+          </div>
+        </div>
       {% elif result == "REAL" %}
         <img src="../static/images/true.png" alt="True news">
+        <h1>Chance of Truth is {{ proba }}%</h1>
+        <div class="container d-flex justify-container-center">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- The chart showing the prediction probability -->
+              <div id="chart_div" style="width: 400px; height: 120px;"></div>
+            </div>
+          </div>
+        </div>
       {% endif %}
     </div>
     <script>
       // Clear the result after 5 seconds
       setTimeout(function() {
         $('.fake-news-card').remove();
+        lastResultSection.remove();
       }, 5000);
       
       // Reset the form and associated variable after 5 seconds
@@ -157,7 +87,7 @@
         {% set text = '' %}
         // location.reload();
       }, 5000);
-      console.log("Result:", "{{ result }}");
+      console.log("Result:", "{{ result }}", "Probability:", "{{ proba }}");
     </script>
     {% endif %}
 
@@ -178,3 +108,17 @@
     </script>
   </body>
 </html>
+<!-- 
+This is an HTML document that includes a form for detecting fake news. It uses the Bootstrap framework for styling and includes some JavaScript code to handle user input and display the results of the fake news detection.
+
+The document starts with the <!DOCTYPE html> declaration, which specifies that this is an HTML5 document. The <html> tag encloses the entire document, and the <head> tag contains metadata information, such as the character encoding, the title of the document, and links to external stylesheets and JavaScript files. The <body> tag contains the visible content of the document.
+
+The form is defined by the <form> tag, which has an action attribute that specifies the URL of the server-side script that will handle the form data when it is submitted. The method attribute is set to "POST", which means that the form data will be sent in the body of an HTTP POST request.
+
+The form contains a <textarea> input element that allows the user to enter a news article URL or text. The name attribute of the <textarea> element is set to "text", which is the name of the form field that will contain the user's input. The required attribute is set to force the user to fill in the field before submitting the form.
+
+The form also includes a <button> element that has a type attribute of "submit", which indicates that this button will submit the form when clicked. The name attribute is set to "predict", which is the name of the form field that will be sent to the server-side script along with the user's input.
+
+If the server-side script returns a result, the document will display a section containing the result. The result section is defined by the <div class='fake-news-card'> tag, which has an inner <img> tag that displays an image indicating whether the news is fake or real. The <h1> tag displays the probability of the prediction, and this value is filled in by the server-side script.
+
+There is also some JavaScript code that handles the user input and updates the document in response to user actions. For example, the growTextarea function is called for each <textarea> element on the page to resize the text box as the user types. Another function updates a "last result" section with the last text entry and result, and clears this section and the result section after 5 seconds. -->
