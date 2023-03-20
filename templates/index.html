@@ -22,8 +22,8 @@
   <body>
     <!-- The card containing information about the creators of the website -->
     <div class="card creators-card">
-      <h1>J & J</h1>
-      <img src="/static/images/johan.jpg" alt="Creator 1">
+      <h1> FAKE NEWS DETECTION </h1>
+      <img src="/static/images/johan.jpg" alt="Creator 1" width=20%>
       <img src="/static/images/jono.jpg" alt="Creator 2">
     </div>
     <script>
@@ -50,7 +50,9 @@
     <div class='fake-news-card'>
       {% if result == "FAKE" %}
         <img src="../static/images/fake.png" alt="Fake news">
-        <h1>Chance of Truth is {{ proba }}%</h1>
+        <br>
+        <br>
+        <h1> Chance Of Bulls#%t : {{ proba }}% </h1>
         <div class="container d-flex justify-container-center">
           <div class="row">
             <div class="col-md-12">
@@ -61,7 +63,9 @@
         </div>
       {% elif result == "REAL" %}
         <img src="../static/images/true.png" alt="True news">
-        <h1>Chance of Truth is {{ proba }}%</h1>
+        <br>
+        <br>
+        <h1> Chance Of Bulls#%t : {{ proba }}% </h1>
         <div class="container d-flex justify-container-center">
           <div class="row">
             <div class="col-md-12">
