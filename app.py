@@ -38,7 +38,7 @@ def predict(text):
     review_vect = check.transform([review]).toarray()
     # Make prediction using logistic regression model
     proba = model.predict_proba(review_vect)
-    prediction = 'FAKE' if proba[0][0] < 0.5 else 'REAL'
+    prediction = 'REAL' if proba[0][0] < 0.5 else 'FAKE'
     proba_percent = round(proba[0][0]*100, 2)
     # Return prediction and probability as a tuple
     return (prediction, proba_percent)

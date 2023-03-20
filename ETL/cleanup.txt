@@ -1,0 +1,98 @@
+import os
+import pandas as pd
+from sqlalchemy import create_engine
+from sqlalchemy import inspect
+from api_keys import postgres_p
+import datetime
+
+# Define file paths for CSV files
+csv_test = os.path.join('..', 'Dataset', 'test.csv')
+csv_train = os.path.join('..', 'Dataset', 'train.csv')
+
+# Read CSV files into pandas dataframes
+test_df = pd.read_csv(csv_test)
+train_df = pd.read_csv(csv_train)
+
+# Display first few rows of test dataframe
+test_df.head()
+
+# Check number of rows and columns in train and test dataframes
+train_df.shape
+test_df.shape
+
+# Check for missing values in train and test dataframes
+train_df.isnull().sum()
+test_df.isnull().sum()
+
+# Fill in missing values with empty strings in train and test dataframes
+train_clean = train_df.fillna('')
+test_clean = test_df.fillna('')
+
+# Check for missing values in cleaned train and test dataframes
+train_clean.isnull().sum()
+test_clean.isnull().sum()
+
+# Create new column in train dataframe called 'text_corpus' by concatenating 'author', 'title', and 'text' columns
+train_clean['text_corpus'] = train_clean['author']+' '+train_clean['title']+' '+train_clean['text']
+
+# Create dataframes for id, label, author, title, text, and text_corpus columns in train dataframe
+article_id_df = pd.DataFrame(train_clean[['id', 'label']])
+article_id_df.rename(columns= {'id':'article_id', 'label':'article_label'}, inplace=True)
+
+title_df = pd.DataFrame(train_clean[['id', 'title']])
+title_df.rename(columns= {'id':'article_id', 'title':'article_title'}, inplace=True)
+
+author_df = pd.DataFrame(train_clean[['id', 'author']])
+author_df.rename(columns= {'id':'article_id', 'author':'article_author'}, inplace=True)
+
+text_df = pd.DataFrame(train_clean[['id', 'text']])
+text_df.rename(columns= {'id':'article_id', 'text':'article_text'}, inplace=True)
+
+text_corpus_df = pd.DataFrame(train_clean[['id', 'text_corpus']])
+text_corpus_df.rename(columns= {'id':'article_id', 'label':'article_label'}, inplace=True)
+
+# Create a date table for article dates - for future analysis and modeling purposes
+article_date = pd.DataFrame(train_clean['id'])
+
+# Assign existing articles today's date
+article_date = article_date.assign(Date=datetime.datetime.now().date())
+
+article_date.rename(columns= {'id':'article_id', 'Date':'article_date'}, inplace=True)
+
+# Define connection parameters for PostgreSQL database
+protocol = 'postgresql'
+username = 'postgres'
+password = postgres_p
+host = 'localhost'
+port = 5432
+database_name = 'Project_4'
+
+# Create SQLAlchemy engine and inspector objects
+rds_connection_string = f'{protocol}://{username}:{password}@{host}:{port}/{database_name}'
+engine = create_engine(rds_connection_string)
+insp = inspect(engine)
+
+# Check table names in the database
+insp.get_table_names()
+
+# Load dataframes to PostgreSQL database using to_sql()
+article_id_df.to_sql(name='article_id', con=engine, if_exists='append', index=False)
+author_df.to_sql(name='article_author', con=engine, if_exists='append', index=False)
+title_df.to_sql(name='article_title', con=engine, if_exists='append', index=False)
+text_df.to_sql(name='article_text', con=engine, if_exists='append', index=False)
+article_date.to_sql(name='article_date', con=engine, if_exists='append', index=False)
+text_corpus_df.to_sql(name='text_corpus', con=engine, if_exists='append', index=False)
+
+
+# Query the database and display the first 15 rows of each table
+pd.read_sql_query('select * from article_id', con=engine).head(15)
+
+pd.read_sql_query('select * from article_author', con=engine).head(15)
+
+pd.read_sql_query('select * from article_text', con=engine).head(15)
+
+pd.read_sql_query('select * from article_date', con=engine).head(15)
+
+pd.read_sql_query('select * from article_title', con=engine).head(15)
+
+pd.read_sql_query('select * from text_corpus', con=engine).head(15)
