@@ -8,6 +8,10 @@ This is our group's project for Project 4, where we were tasked to solve, analyz
 ## Project Overview
 Fake news is a growing problem in today's society, and it can have serious consequences, including influencing public opinion and even shaping policy decisions. In this project, we aim to build a machine learning model that can accurately identify whether a given news article is fake or not.
 
+<p align="center">
+<img src="static/Images/Project4.png" alt="" title="" width="600" height="400">
+</p>
+
 ## Technologies Used
 We utilized the following technologies in our project:
 
@@ -45,32 +49,43 @@ https://www.kaggle.com/c/fake-news/data
 The preprocessing steps include:
 
 Lowercasing the text
+
 Tokenization
+
 Removing stopwords
+
 Stemming using the PorterStemmer algorithm
+
 Vectorization
+
 The text data is transformed into numerical features using the CountVectorizer class from the sklearn library. This is done to enable machine learning algorithms to process the text data.
 
 ## Model Training
 Two classification models are used to identify fake news articles:
 
 Logistic Regression
+
 Passive Aggressive Classifier
+
 Hyperparameter tuning is performed using GridSearchCV to optimize the models for the best performance.
 
 ## Model Evaluation
 The performance of each model is evaluated using the following metrics:
 
 Prediction Accuracy
+
 Classification Report
+
 Confusion Matrix
 
-<p align="center">
-<img src="static/Images/logreg-results.jpg" alt="" title="" width="600" height="600">
-</p>
 
-<p align="center">
-<img src="static/Images/passive-aggressive-results.jpg" alt="" title="" width="600" height="600">
+<p>
+<img src="static/Images/logreg-results.jpg" alt="" title="" width="300" height="300">
+</p>
+<br>
+<br>
+<p>
+<img src="static/Images/passive-aggressive-results.jpg" alt="" title="" width="300" height="300">
 </p>
 
 ## Group Presentation
