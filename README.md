@@ -31,15 +31,47 @@ Our project follows the technical requirements outlined in the assignment brief,
 - Maintaining a GitHub repository that is free of unnecessary files and folders and has an appropriate .gitignore in use
 - Customizing the README as a polished presentation of the content of the project
 
-## Dataset
-Our dataset contains 1000 news articles, 500 labeled as real news and 500 labeled as fake news. The data has been collected from various sources and preprocessed to remove any irrelevant information. The dataset is stored in a CSV file, which is included in the repository.
-
-## Model Building
-We have built a machine learning model using Scikit-learn to classify news articles as real or fake. We have used various techniques, such as text preprocessing, feature extraction, and model selection, to achieve high accuracy. The model is trained on 70% of the dataset and tested on the remaining 30%. We have achieved an accuracy of 95% on the test set.
 
 ## Group Members
 - Johan Snyman
 - Jon Wood 
+
+## Dataset
+The dataset used in this project consists of 5000 news articles labeled as either fake or real. The dataset is split into training and test sets to train and evaluate the machine learning models.
+
+https://www.kaggle.com/c/fake-news/data
+
+## Preprocessing
+The preprocessing steps include:
+
+Lowercasing the text
+Tokenization
+Removing stopwords
+Stemming using the PorterStemmer algorithm
+Vectorization
+The text data is transformed into numerical features using the CountVectorizer class from the sklearn library. This is done to enable machine learning algorithms to process the text data.
+
+## Model Training
+Two classification models are used to identify fake news articles:
+
+Logistic Regression
+Passive Aggressive Classifier
+Hyperparameter tuning is performed using GridSearchCV to optimize the models for the best performance.
+
+## Model Evaluation
+The performance of each model is evaluated using the following metrics:
+
+Prediction Accuracy
+Classification Report
+Confusion Matrix
+
+<p align="center">
+<img src="Static/Images/logreg-results.jpg" alt="" title="" width="600" height="600">
+</p>
+
+<p align="center">
+<img src="Static/Images/passive-aggressive-results.jpg" alt="" title="" width="600" height="600">
+</p>
 
 ## Group Presentation
 We will be giving a group presentation on our project, where all members will speak and present the project's content, transitions, and conclusions smoothly within the allotted time. We will also ensure that the presentation maintains audience interest throughout.
