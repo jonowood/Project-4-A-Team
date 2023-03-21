@@ -116,14 +116,9 @@ Presentation
    |-- Project-4-Presentation.pdf
 Proposal
    |-- Project 4 - A-TEAM - Proposal.pdf
-README.md
 Static
    |-- Images
    |   |-- fake-new-facts.jpeg
-app.py
-requirements.txt
-static
-   |-- Images
    |   |-- Project 4 outline.png
    |   |-- fake.png
    |   |-- johan.jpg
@@ -135,6 +130,9 @@ static
    |   |-- project4_style.css
 templates
    |-- index.html
+README.md
+app.py
+requirements.txt
 ```   
 
 ## Running the Web Application
