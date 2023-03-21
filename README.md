@@ -66,11 +66,11 @@ Classification Report
 Confusion Matrix
 
 <p align="center">
-<img src="Static/Images/logreg-results.jpg" alt="" title="" width="600" height="600">
+<img src="static/Images/logreg-results.jpg" alt="" title="" width="600" height="600">
 </p>
 
 <p align="center">
-<img src="Static/Images/passive-aggressive-results.jpg" alt="" title="" width="600" height="600">
+<img src="static/Images/passive-aggressive-results.jpg" alt="" title="" width="600" height="600">
 </p>
 
 ## Group Presentation
