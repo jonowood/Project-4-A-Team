@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 ETL/api_keys.py
 ML/api_keys.py
+static/Images/both-for-dall-e.jpg
