@@ -38,7 +38,7 @@ Our project follows the technical requirements outlined in the assignment brief,
 - Jon Wood 
 
 ## Dataset
-The dataset used in this project consists of 20,00+ news articles labeled as either fake or real. We used 5000 of these for this project. The dataset is split into training and test sets to train and evaluate the machine learning models.
+The dataset used in this project consists of 20,000+ news articles labeled as either fake or real. We used 5000 of these for this project. The dataset is split into training and test sets to train and evaluate the machine learning models.
 
 https://www.kaggle.com/c/fake-news/data
 
