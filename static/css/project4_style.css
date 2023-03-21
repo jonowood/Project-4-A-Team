@@ -61,6 +61,7 @@ body {
   padding: 30px;
   width: 500px;
   text-align: center;
+  align: center;
 }
 
 .creators-card h1 {
@@ -75,6 +76,7 @@ body {
   border-radius: 10%;
   margin-bottom: 20px;
   display: inline-block;
+  align: center;
 }
 
 .fake-news-card {
