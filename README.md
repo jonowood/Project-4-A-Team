@@ -89,12 +89,53 @@ Confusion Matrix
 We will be giving a group presentation on our project, where all members will speak and present the project's content, transitions, and conclusions smoothly within the allotted time. We will also ensure that the presentation maintains audience interest throughout.
 
 ## Project Structure
-- `data/` directory contains the dataset in CSV format
-- `notebooks/` directory contains Jupyter notebooks used for data analysis, preprocessing, and model building
-- `static/` directory contains CSS and JavaScript files for the web application
-- `templates/` directory contains HTML templates for the web application
-- `app.py` is the main Python file for the web application
-- `model.pkl` is the trained machine learning model in pickle format
+```
+Dataset
+   |-- source-info.txt
+   |-- test.csv
+   |-- train.csv
+ETL
+   |-- ETL_Project_4.ipynb
+   |-- Schema
+   |   |-- Project 4 - DBD.png
+   |   |-- Project_4 Database Schema.sql
+   |   |-- QuickDBD-Project 4.pdf
+   |-- cleanup.txt
+ML
+   |-- FAKE-NEWS-ML.ipynb
+   |-- api_keys.py
+   |-- logreg_model_optimization.png
+   |-- model_optimization.png
+Pickles
+   |-- logisticreg_model.pkl
+   |-- passive_aggressive_model.pkl
+   |-- passiveagressive_model.pkl
+   |-- tfidf_vectorizer.pkl
+   |-- tfidfvect2.pkl
+Presentation
+   |-- Project-4-Presentation.pdf
+Proposal
+   |-- Project 4 - A-TEAM - Proposal.pdf
+README.md
+Static
+   |-- Images
+   |   |-- fake-new-facts.jpeg
+app.py
+requirements.txt
+static
+   |-- Images
+   |   |-- Project 4 outline.png
+   |   |-- fake.png
+   |   |-- johan.jpg
+   |   |-- jono.jpg
+   |   |-- logreg-results.jpg
+   |   |-- passive-aggressive-results.jpg
+   |   |-- true.png
+   |-- css
+   |   |-- project4_style.css
+templates
+   |-- index.html
+```   
 
 ## Running the Web Application
 To run the web application, follow these steps:
