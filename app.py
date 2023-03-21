@@ -4,7 +4,7 @@ import nltk
 import pickle
 import numpy as np
 from scipy.sparse import csr_matrix
-from nltk.corpus import stopwords
+# from nltk.corpus import stopwords
 import re
 from nltk.stem.porter import PorterStemmer
 
