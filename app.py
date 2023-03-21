@@ -1,11 +1,10 @@
 # Import dependencies
 from flask import Flask, render_template, request, jsonify
 import nltk
-nltk.download('stopwords')
 import pickle
 import numpy as np
 from scipy.sparse import csr_matrix
-# from nltk.corpus import stopwords
+from nltk.corpus import stopwords
 import re
 from nltk.stem.porter import PorterStemmer
 
