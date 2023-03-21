@@ -6,11 +6,10 @@
 This is our group's project for Project 4, where we were tasked to solve, analyze, or visualize a problem using machine learning (ML) with the other technologies we've learned. We chose to tackle the problem of identifying fake news using ML. 
 
 ## Project Overview
-Fake news is a growing problem in today's society, and it can have serious consequences, including influencing public opinion and even shaping policy decisions. In this project, we aim to build a machine learning model that can accurately identify whether a given news article is fake or not.
-
 <p align="center">
-<img src="static/Images/Project4.png" alt="" title="" width="600" height="400">
+<img src="static/Images/Project 4 outline.png" alt="" title="" width="600" height="600">
 </p>
+Fake news is a growing problem in today's society, and it can have serious consequences, including influencing public opinion and even shaping policy decisions. In this project, we aim to build a machine learning model that can accurately identify whether a given news article is fake or not.
 
 ## Technologies Used
 We utilized the following technologies in our project:
@@ -19,9 +18,8 @@ We utilized the following technologies in our project:
 - Python Pandas for data manipulation
 - Python Matplotlib for data visualization
 - HTML/CSS/Bootstrap for frontend web development
-- JavaScript Plotly for interactive data visualization
+- JavaScript Plotly for data visualization
 - SQL Database for data storage and retrieval
-- Google Cloud SQL for cloud-based SQL hosting
 
 ## Technical Requirements
 Our project follows the technical requirements outlined in the assignment brief, including:
@@ -34,7 +32,6 @@ Our project follows the technical requirements outlined in the assignment brief,
 - Printing or displaying overall model performance at the end of the script
 - Maintaining a GitHub repository that is free of unnecessary files and folders and has an appropriate .gitignore in use
 - Customizing the README as a polished presentation of the content of the project
-
 
 ## Group Members
 - Johan Snyman
